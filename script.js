@@ -5,9 +5,7 @@
    ================================================================ */
 
 // ===== CONTACT FORM BACKEND CONFIG =====
-// Paste the Web App URL you get after deploying Code.gs on Google Apps Script.
-// Guide: see SETUP-GUIDE-AR.md included in this package.
-const SHEET_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwqV0jwo9dALxQB34Lx1XY0mgdcVuyXiov0J3LjltcnydWRXyl7mnPvlnO4eN9oSpKD/exec';
+const SHEET_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzxiTacHvdP_gnT2udX7wSxzMy8o9-okjoicEZdhUPEaRSwlkgwu6RWicAKGZ6AFJlsFg/exec';
 
 // ===== STATE =====
 let currentLang = localStorage.getItem('drr_lang') || 'en';
@@ -302,7 +300,9 @@ function initForm() {
     const successEl = document.getElementById('form-success');
     const msgEl = document.getElementById('form-success-msg');
     const t = (typeof translations !== 'undefined') ? translations[currentLang] : null;
-    const sheetConfigured = SHEET_WEBAPP_URL && !SHEET_WEBAPP_URL.includes('https://script.google.com/macros/s/AKfycbwqV0jwo9dALxQB34Lx1XY0mgdcVuyXiov0J3LjltcnydWRXyl7mnPvlnO4eN9oSpKD/exec');
+    
+    // تم التصحيح هنا ليعتمد على الرابط الحقيقي بدلاً من النص الافتراضي
+    const sheetConfigured = SHEET_WEBAPP_URL && SHEET_WEBAPP_URL.startsWith('https://script.google.com/');
     const formspreeConfigured = form.action && !form.action.includes('YOUR_FORMSPREE_ID');
 
     if (!sheetConfigured && !formspreeConfigured) {
@@ -313,19 +313,17 @@ function initForm() {
       return;
     }
 
-    let sheetOk = !sheetConfigured; // treat as "ok" if not set up, so it doesn't block success
+    let sheetOk = !sheetConfigured;
     let formspreeOk = !formspreeConfigured;
 
     try {
-      // 1) Send to Google Sheet (primary log — never lost, no monthly limit)
       if (sheetConfigured) {
         try {
           await fetch(SHEET_WEBAPP_URL, { method: 'POST', body: new FormData(form) });
-          sheetOk = true; // Apps Script web apps often respond as opaque (no-cors-like); treat network success as ok
+          sheetOk = true; 
         } catch { sheetOk = false; }
       }
 
-      // 2) Send to Formspree (optional secondary email notification)
       if (formspreeConfigured) {
         try {
           const resp = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
