@@ -1,5 +1,5 @@
 /* ================================================================
-   DR. RAMI YOUSRY — MAIN SCRIPT v2
+   DR. RAMY YOUSRY — MAIN SCRIPT v2
    EN default | AR | FR support
    Top Bar: Timezone + Session Timer
    ================================================================ */
@@ -226,7 +226,7 @@ function applyLanguage(lang) {
   });
 
   // Page title
-  const titles = { en: 'Dr. Rami Yousry | International Consultant — AI & Cybersecurity', ar: 'د. رامي يسري | مستشار دولي — الذكاء الاصطناعي والأمن السيبراني', fr: 'Dr. Rami Yousry | Consultant International — IA & Cybersécurité' };
+  const titles = { en: 'Dr. Ramy Yousry | International Consultant — AI & Cybersecurity', ar: 'د. رامي يسري | مستشار دولي — الذكاء الاصطناعي والأمن السيبراني', fr: 'Dr. Ramy Yousry | Consultant International — IA & Cybersécurité' };
   document.title = titles[lang] || titles.en;
 }
 
