@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conferences — Dr. Rami Yousry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="ltr-mode conferences-bg">
+  <div id="particles-container"></div>
+
+  <div class="top-bar"><div class="top-bar-inner">
+    <div class="top-bar-left"><span class="top-bar-icon">🌍</span><span class="top-time-label" id="tb-your-time">Your Time</span><span class="top-clock" id="top-clock">--:--:--</span><span class="top-timezone" id="top-timezone"></span></div>
+    <div class="top-bar-center"><span class="top-bar-icon pulse-green">●</span><span id="tb-available">Available for collaboration</span></div>
+    <div class="top-bar-right"><span class="top-bar-icon">⏱</span><span class="top-session-label" id="tb-session">Session</span><span class="top-session" id="session-timer">00:00</span></div>
+  </div></div>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><span class="logo-icon">⬡</span><span class="logo-text">Dr. Rami Yousry</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about" id="nav-about">About</a></li>
+        <li><a href="expertise.html" id="nav-expertise">Expertise</a></li>
+        <li><a href="experience.html" id="nav-experience">Career</a></li>
+        <li><a href="certifications.html" id="nav-certifications">Certifications</a></li>
+        <li><a href="conferences.html" id="nav-conferences" class="active">Conferences</a></li>
+        <li><a href="portfolio.html" id="nav-portfolio" class="nav-highlight">Portfolio</a></li>
+        <li><a href="index.html#contact" id="nav-contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switcher"><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="ar">AR</button><button class="lang-btn" data-lang="fr">FR</button></div>
+        <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="back-nav">
+    <button class="back-btn"><span>← Go Back</span></button>
+    <a href="index.html" class="close-btn"><span>✕ Close</span></a>
+  </div>
+
+  <div class="subpage-content">
+    <div class="subpage-hero fade-in">
+      <span class="subpage-tag" id="sp-tag">Global</span>
+      <h1 class="subpage-title" id="sp-title">International Conferences</h1>
+      <p class="subpage-subtitle" id="sp-sub">Representing Egypt on the global stage — from Barcelona to Riyadh, engaging with the world's leading minds in technology and security.</p>
+    </div>
+
+    <!-- Conferences -->
+    <div class="conf-world">
+      <div class="conf-world-card fade-in" data-delay="0">
+        <div class="conf-year-big">2026</div>
+        <div class="conf-flag-big">🇪🇸</div>
+        <h3>Mobile World Congress 2026</h3>
+        <p id="conf1-desc">Barcelona, Spain — Official Representative in Egyptian Delegation</p>
+        <span class="conf-badge-pill" id="badge-tech1">Technology</span>
+      </div>
+      <div class="conf-world-card fade-in" data-delay="100">
+        <div class="conf-year-big">2026</div>
+        <div class="conf-flag-big">🇪🇬</div>
+        <h3>CAISEC 2026</h3>
+        <p id="conf2-desc">Egypt International Exhibition Center, Cairo</p>
+        <span class="conf-badge-pill" id="badge-cyber1">Cybersecurity</span>
+      </div>
+      <div class="conf-world-card fade-in" data-delay="200">
+        <div class="conf-year-big">2024</div>
+        <div class="conf-flag-big">🇸🇦</div>
+        <h3>AI Summit — Riyadh 2024</h3>
+        <p id="conf3-desc">Riyadh, Saudi Arabia</p>
+        <span class="conf-badge-pill" id="badge-ai1">AI</span>
+      </div>
+      <div class="conf-world-card fade-in" data-delay="300">
+        <div class="conf-year-big">2024</div>
+        <div class="conf-flag-big">🇪🇬</div>
+        <h3>Egypt Information Security Forum 2024</h3>
+        <p id="conf4-desc">Ritz-Carlton Hotel, Cairo</p>
+        <span class="conf-badge-pill" id="badge-cyber2">Cybersecurity</span>
+      </div>
+      <div class="conf-world-card fade-in" data-delay="400">
+        <div class="conf-year-big">2024</div>
+        <div class="conf-flag-big">🇪🇬</div>
+        <h3>CAISEC 2024</h3>
+        <p id="conf5-desc">Egypt International Exhibition Center, Cairo</p>
+        <span class="conf-badge-pill">International</span>
+      </div>
+    </div>
+
+    <!-- Awards Section -->
+    <div class="subpage-hero fade-in" style="margin-top:80px;">
+      <span class="subpage-tag">Honors</span>
+      <h2 class="subpage-title" style="font-size:clamp(1.5rem,4vw,2.2rem)" id="awards-title">Awards & Honors</h2>
+    </div>
+
+    <div class="awards-world">
+      <div class="award-world-card gold fade-in" data-delay="0">
+        <div class="award-medal-big">🥇</div>
+        <div class="award-rank-txt" id="aw1-rank">1st Place</div>
+        <p id="aw1-name">Cairo Competition</p>
+        <div class="award-yr">2021</div>
+      </div>
+      <div class="award-world-card fade-in" data-delay="100">
+        <div class="award-medal-big">🏆</div>
+        <div class="award-rank-txt" id="aw2-rank">6th Place</div>
+        <p id="aw2-name">Solar Tracker Energy Conversion Device</p>
+        <div class="award-yr">2021</div>
+      </div>
+      <div class="award-world-card bronze fade-in" data-delay="200">
+        <div class="award-medal-big">🥉</div>
+        <div class="award-rank-txt" id="aw3-rank">3rd Place</div>
+        <p id="aw3-name">Innovations Competition — Central Security</p>
+        <div class="award-yr">2020</div>
+      </div>
+      <div class="award-world-card silver fade-in" data-delay="300">
+        <div class="award-medal-big">🥈</div>
+        <div class="award-rank-txt" id="aw4-rank">2nd Place</div>
+        <p id="aw4-name">Cairo Competition</p>
+        <div class="award-yr">2019</div>
+      </div>
+      <div class="award-world-card fade-in" data-delay="400">
+        <div class="award-medal-big">🎖️</div>
+        <div class="award-rank-txt" id="aw5-rank">7th Place</div>
+        <p id="aw5-name">Cairo Competition</p>
+        <div class="award-yr">2018</div>
+      </div>
+    </div>
+
+    <div class="section-cta fade-in" style="margin-top:50px;">
+      <a href="portfolio.html" class="btn-primary">📁 View Full Portfolio →</a>
+      <a href="index.html#contact" class="btn-secondary" style="margin-left:14px;">📩 Contact</a>
+    </div>
+  </div>
+
+  <a href="https://wa.me/14489958107" target="_blank" class="whatsapp-float"><div class="wa-pulse"></div><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="wa-tooltip">Chat Now</span></a>
+  <div class="ai-chat-btn" id="ai-chat-btn"><div class="ai-pulse"></div><span class="ai-icon">🤖</span><span class="ai-tooltip" id="ai-tooltip">AI Assistant</span></div>
+  <div class="ai-chat-modal" id="ai-chat-modal"><div class="chat-header"><div class="chat-avatar">🤖</div><div class="chat-info"><h4 id="ai-title">AI Assistant</h4><span class="chat-status" id="ai-status">Online</span></div><button class="chat-close" id="chat-close">✕</button></div><div class="chat-messages"><div class="chat-msg bot"><div class="msg-bubble" id="ai-welcome">Hello! 👋</div></div><div class="chat-msg bot"><div class="msg-bubble coming-soon" id="ai-coming">🚧 Coming soon!</div></div><div class="chat-msg bot"><div class="quick-actions"><a href="index.html#contact" class="quick-btn" id="ai-register-btn">📝 Register</a><a href="https://wa.me/14489958107" target="_blank" class="quick-btn" id="ai-wa-btn">💬 WhatsApp</a></div></div></div><div class="chat-input-area"><input type="text" id="chat-input" placeholder="Write..." disabled/><button class="chat-send" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button></div></div>
+
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+  <script>
+    function applyPageLang(lang, t) {
+      const map = {
+        'sp-tag':'tag_global','sp-title':'h_conferences','awards-title':'h_awards',
+        'conf1-desc':'conf1_desc','conf2-desc':'conf2_desc','conf3-desc':'conf3_desc',
+        'conf4-desc':'conf4_desc','conf5-desc':'conf5_desc',
+        'badge-tech1':'badge_tech','badge-cyber1':'badge_cyber','badge-cyber2':'badge_cyber','badge-ai1':'badge_ai',
+        'aw1-rank':'award1_rank','aw1-name':'award1_name','aw2-rank':'award2_rank','aw2-name':'award2_name',
+        'aw3-rank':'award3_rank','aw3-name':'award3_name','aw4-rank':'award4_rank','aw4-name':'award4_name',
+        'aw5-rank':'award5_rank','aw5-name':'award5_name',
+      };
+      Object.entries(map).forEach(([id,key])=>{ const el=document.getElementById(id); if(el&&t[key]) el.textContent=t[key]; });
+      document.title=`${t.nav_conferences} — Dr. Rami Yousry`;
+    }
+    document.addEventListener('DOMContentLoaded', initSubPage);
+  </script>
+</body>
+</html>

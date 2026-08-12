@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dr. Rami Yousry | International Consultant — AI Governance & Cybersecurity</title>
+  <meta name="description" content="Dr. Rami Yousry — International Consultant in AI Governance and Cybersecurity, Cambridge Certified International Trainer with 20+ years experience."/>
+  <meta name="keywords" content="Rami Yousry, AI Governance, Cybersecurity, International Consultant, Trainer, Cambridge"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="ltr-mode">
+
+  <div id="particles-container"></div>
+
+  <!-- ===== TOP INFO BAR ===== -->
+  <div class="top-bar" id="top-bar">
+    <div class="top-bar-inner">
+      <div class="top-bar-left">
+        <span class="top-bar-icon">🌍</span>
+        <span class="top-time-label" id="tb-your-time">Your Time</span>
+        <span class="top-clock" id="top-clock">--:--:--</span>
+        <span class="top-timezone" id="top-timezone"></span>
+      </div>
+      <div class="top-bar-center">
+        <span class="top-bar-icon pulse-green">●</span>
+        <span id="tb-available">Available for collaboration</span>
+      </div>
+      <div class="top-bar-right">
+        <span class="top-bar-icon">⏱</span>
+        <span class="top-session-label" id="tb-session">Session</span>
+        <span class="top-session" id="session-timer">00:00</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">Dr. Rami Yousry</span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" id="nav-about">About</a></li>
+        <li><a href="expertise.html" id="nav-expertise">Expertise</a></li>
+        <li><a href="experience.html" id="nav-experience">Career</a></li>
+        <li><a href="certifications.html" id="nav-certifications">Certifications</a></li>
+        <li><a href="conferences.html" id="nav-conferences">Conferences</a></li>
+        <li><a href="portfolio.html" id="nav-portfolio" class="nav-highlight">Portfolio</a></li>
+        <li><a href="#contact" id="nav-contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switcher" id="lang-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ar">AR</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+        <button class="nav-toggle" id="nav-toggle">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span id="hero-badge">Available for International Collaboration</span>
+      </div>
+      <div class="hero-photo-wrapper">
+        <div class="hero-photo-ring"></div>
+        <div class="hero-photo-ring ring-2"></div>
+        <img src="images/profile.jpg" alt="Dr. Rami Yousry" class="hero-photo"/>
+        <div class="hero-photo-badge">PhD</div>
+      </div>
+      <h1 class="hero-name" id="hero-name">Dr. Rami Yousry M. A. Hashem</h1>
+      <p class="hero-title" id="hero-title">International Consultant — AI Governance & Cybersecurity</p>
+      <p class="hero-subtitle" id="hero-subtitle">Cambridge Certified International Trainer | 20+ Years | 3000+ Trainees</p>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num" data-target="20">0</span><span>+</span>
+          <span class="stat-label" id="stat-years">Years Exp.</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="3000">0</span><span>+</span>
+          <span class="stat-label" id="stat-trainees">Trainees</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="40">0</span><span>+</span>
+          <span class="stat-label" id="stat-programs">Programs</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="5">0</span>
+          <span class="stat-label" id="stat-conferences">Int'l Conf.</span>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary" id="hero-cta1">Get In Touch</a>
+        <a href="#about" class="btn-secondary" id="hero-cta2">Learn More</a>
+      </div>
+      <div class="hero-socials">
+        <a href="mailto:cyber.security.consultant2030@gmail.com" class="social-link" title="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+        <a href="https://wa.me/14489958107" target="_blank" class="social-link" title="WhatsApp" id="wa-social">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1-XeiYtOV07gzVsQddErY1we0h6-1MS_B" target="_blank" class="social-link" title="Portfolio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-dot"></div>
+      <span id="hero-scroll">Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag" id="tag-about">Who I Am</span>
+        <h2 id="h-about">Professional Summary</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <p class="about-lead" id="about-lead">PhD holder in Police Sciences, specializing in Cyber Legislation and Digital Transformation, with over twenty years of experience designing and implementing specialized training programs in AI and Cybersecurity.</p>
+          <p class="about-body" id="about-body">Cambridge-certified international trainer with an outstanding record in building technical curricula and leading training and education teams.</p>
+          <div class="about-contact-grid">
+            <div class="contact-chip"><span class="chip-icon">📧</span><a href="mailto:cyber.security.consultant2030@gmail.com">cyber.security.consultant2030@gmail.com</a></div>
+            <div class="contact-chip"><span class="chip-icon">📍</span><span id="contact-location">Cairo, Egypt</span></div>
+            <div class="contact-chip"><span class="chip-icon">🇪🇬</span><a href="tel:+201143150888">+201143150888</a></div>
+            <div class="contact-chip"><span class="chip-icon">🇺🇸</span><a href="tel:+14489958107">+14489958107</a></div>
+            <div class="contact-chip"><span class="chip-icon">🇬🇧</span><a href="tel:+447358890600">+447358890600</a></div>
+          </div>
+        </div>
+        <div class="about-visual fade-in">
+          <div class="about-card-3d">
+            <div class="card-inner"><div class="card-front">
+              <img src="images/profile.jpg" alt="Dr. Rami Yousry" class="about-photo"/>
+              <div class="card-glow"></div>
+            </div></div>
+            <div class="floating-tag tag-1"><span>🛡️</span><span>Cybersecurity</span></div>
+            <div class="floating-tag tag-2"><span>🤖</span><span>AI Governance</span></div>
+            <div class="floating-tag tag-3"><span>🎓</span><span>Int'l Trainer</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERTISE PREVIEW ===== -->
+  <section class="section expertise-section" id="expertise">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag" id="tag-expertise">What I Offer</span>
+        <h2 id="h-expertise">Core Competencies</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="expertise-grid">
+        <a href="expertise.html" class="expertise-card fade-in" data-delay="0">
+          <div class="expertise-icon-wrap"><div class="expertise-icon">🤖</div></div>
+          <h3 id="exp1-title">Digital Transformation & AI Governance</h3>
+          <p id="exp1-body">Designing digital transformation strategies and AI governance frameworks.</p>
+          <span class="card-explore" id="explore-btn">Explore →</span>
+        </a>
+        <a href="expertise.html" class="expertise-card fade-in" data-delay="100">
+          <div class="expertise-icon-wrap"><div class="expertise-icon">⚡</div></div>
+          <h3 id="exp2-title">Prompt Engineering & AI Agents</h3>
+          <p id="exp2-body">Designing and operating AI agents with advanced techniques.</p>
+          <span class="card-explore">Explore →</span>
+        </a>
+        <a href="expertise.html" class="expertise-card fade-in" data-delay="200">
+          <div class="expertise-icon-wrap"><div class="expertise-icon">🛡️</div></div>
+          <h3 id="exp3-title">Cybersecurity & Digital Threats</h3>
+          <p id="exp3-body">Analyzing cyber threats and designing cyber defenses.</p>
+          <span class="card-explore">Explore →</span>
+        </a>
+        <a href="expertise.html" class="expertise-card fade-in" data-delay="300">
+          <div class="expertise-icon-wrap"><div class="expertise-icon">🔍</div></div>
+          <h3 id="exp4-title">Digital Forensics</h3>
+          <p id="exp4-body">Investigating cybercrimes and collecting digital evidence.</p>
+          <span class="card-explore">Explore →</span>
+        </a>
+        <a href="expertise.html" class="expertise-card fade-in" data-delay="400">
+          <div class="expertise-icon-wrap"><div class="expertise-icon">🏗️</div></div>
+          <h3 id="exp5-title">Critical Infrastructure Protection</h3>
+          <p id="exp5-body">Designing and implementing infrastructure protection systems.</p>
+          <span class="card-explore">Explore →</span>
+        </a>
+        <a href="expertise.html" class="expertise-card fade-in" data-delay="500">
+          <div class="expertise-icon-wrap"><div class="expertise-icon">📚</div></div>
+          <h3 id="exp6-title">Training & Curriculum Development</h3>
+          <p id="exp6-body">Designing specialized training programs and curricula.</p>
+          <span class="card-explore">Explore →</span>
+        </a>
+      </div>
+      <div class="section-cta fade-in">
+        <a href="expertise.html" class="btn-primary" id="view-all-expertise">View All Expertise →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PORTFOLIO PREVIEW ===== -->
+  <section class="section portfolio-preview-section" id="portfolio-preview">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag" id="tag-portfolio">Portfolio</span>
+        <h2 id="h-portfolio">Portfolio & Resources</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="portfolio-preview-grid">
+        <a href="portfolio.html#certificates" class="port-preview-card fade-in" data-delay="0">
+          <div class="port-preview-icon">🏆</div>
+          <div class="port-preview-glow"></div>
+          <h3 id="port1-title">Certificates & Awards</h3>
+          <p id="port1-desc">View official certificates, credentials, and award documentation.</p>
+          <span class="port-preview-btn" id="port1-btn">View Certificates</span>
+        </a>
+        <a href="portfolio.html#photos" class="port-preview-card fade-in" data-delay="100">
+          <div class="port-preview-icon">📸</div>
+          <div class="port-preview-glow"></div>
+          <h3 id="port2-title">Professional Journey Photos</h3>
+          <p id="port2-desc">Photos from conferences, lectures, and official events.</p>
+          <span class="port-preview-btn" id="port2-btn">View Gallery</span>
+        </a>
+        <a href="portfolio.html#materials" class="port-preview-card fade-in" data-delay="200">
+          <div class="port-preview-icon">📄</div>
+          <div class="port-preview-glow"></div>
+          <h3 id="port3-title">Scientific Materials</h3>
+          <p id="port3-desc">Research papers, curricula, and academic content.</p>
+          <span class="port-preview-btn" id="port3-btn">Download Materials</span>
+        </a>
+        <a href="portfolio.html#lectures" class="port-preview-card fade-in" data-delay="300">
+          <div class="port-preview-icon">🎬</div>
+          <div class="port-preview-glow"></div>
+          <h3 id="port4-title">Recorded Lectures</h3>
+          <p id="port4-desc">Access recorded training sessions and specialized lectures.</p>
+          <span class="port-preview-btn" id="port4-btn">Watch Lectures</span>
+        </a>
+      </div>
+      <div class="port-note fade-in">
+        <span>🔒</span>
+        <span id="port-note">Some content requires authorization. Contact to request access.</span>
+        <a href="#contact" class="port-contact-link" id="port-contact">📩 Request Private Access</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-tag" id="tag-contact">Reach Out</span>
+        <h2 id="h-contact">Register & Get In Touch</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info fade-in">
+          <h3 id="contact-info-title">Contact Information</h3>
+          <div class="info-items">
+            <div class="info-item">
+              <div class="info-icon">📧</div>
+              <div><strong>Email</strong><a href="mailto:cyber.security.consultant2030@gmail.com">cyber.security.consultant2030@gmail.com</a></div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📞</div>
+              <div><strong>🇪🇬 Egypt</strong><a href="tel:+201143150888">+201143150888</a></div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📞</div>
+              <div><strong>🇺🇸 USA</strong><a href="tel:+14489958107">+14489958107</a></div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📞</div>
+              <div><strong>🇬🇧 UK</strong><a href="tel:+447358890600">+447358890600</a></div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div><strong id="contact-loc-label">Location</strong><span id="contact-location2">Cairo, Egypt</span></div>
+            </div>
+          </div>
+          <a href="https://wa.me/14489958107" target="_blank" class="whatsapp-contact-btn" id="wa-contact-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span id="wa-btn">Contact via WhatsApp</span>
+          </a>
+        </div>
+        <div class="contact-form-wrapper fade-in">
+          <div class="form-header">
+            <h3 id="contact-register-title">Register Your Details</h3>
+            <p id="contact-register-sub">You will receive a response as soon as possible</p>
+          </div>
+          <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <input type="hidden" name="_subject" value="New Registration — Dr. Rami Yousry Website"/>
+            <div class="form-group">
+              <label for="fullname" id="lbl-name">Full Name *</label>
+              <div class="input-wrapper">
+                <span class="input-icon">👤</span>
+                <input type="text" id="fullname" name="name" placeholder="Enter your full name" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email" id="lbl-email">Email Address *</label>
+              <div class="input-wrapper">
+                <span class="input-icon">📧</span>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone" id="lbl-phone">Mobile Number *</label>
+              <div class="input-wrapper">
+                <span class="input-icon">📱</span>
+                <input type="tel" id="phone" name="phone" placeholder="+1 xxx xxx xxxx" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="interest" id="lbl-interest">Subject of Inquiry</label>
+              <div class="input-wrapper">
+                <span class="input-icon">💬</span>
+                <select id="interest" name="interest">
+                  <option value="" id="opt-select">Select Subject</option>
+                  <option value="training" id="opt-training">Training & Educational Programs</option>
+                  <option value="consulting" id="opt-consulting">AI Consulting</option>
+                  <option value="cyber" id="opt-cyber">Cybersecurity Consulting</option>
+                  <option value="lecture" id="opt-lecture">Lectures & Seminars</option>
+                  <option value="portfolio" id="opt-portfolio">Request Portfolio Access</option>
+                  <option value="other" id="opt-other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message" id="lbl-message">Your Message</label>
+              <div class="input-wrapper textarea-wrapper">
+                <textarea id="message" name="message" rows="4" placeholder="Write your message here..."></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn-submit" id="submit-btn">
+              <span class="btn-text" id="form-submit">Submit & Register</span>
+              <span class="btn-loader" style="display:none;">⏳</span>
+            </button>
+            <div class="form-success" id="form-success" style="display:none;">
+              <span>✅</span>
+              <span id="form-success-msg">Successfully sent! Dr. Rami will contact you soon.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-icon">⬡</span>
+          <h3>Dr. Rami Yousry</h3>
+          <p id="footer-desc">International Consultant — AI Governance & Cybersecurity</p>
+        </div>
+        <div class="footer-links">
+          <h4 id="footer-links-title">Quick Links</h4>
+          <ul>
+            <li><a href="#about" id="fl-about">About</a></li>
+            <li><a href="expertise.html" id="fl-expertise">Expertise</a></li>
+            <li><a href="experience.html" id="fl-experience">Career</a></li>
+            <li><a href="certifications.html" id="fl-certs">Certifications</a></li>
+            <li><a href="portfolio.html" id="fl-portfolio">Portfolio</a></li>
+            <li><a href="#contact" id="fl-contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 id="footer-contact-title">Contact</h4>
+          <p>📧 <a href="mailto:cyber.security.consultant2030@gmail.com">cyber.security.consultant2030@gmail.com</a></p>
+          <p>🇪🇬 <a href="tel:+201143150888">+201143150888</a></p>
+          <p>🇺🇸 <a href="tel:+14489958107">+14489958107</a></p>
+          <p>🇬🇧 <a href="tel:+447358890600">+447358890600</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Dr. Rami Yousry M. A. Hashem — <span id="footer-rights">All Rights Reserved</span></p>
+        <p class="footer-built" id="footer-built">Professional Integrated Website</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== WHATSAPP FLOAT ===== -->
+  <a href="https://wa.me/14489958107" target="_blank" class="whatsapp-float" id="whatsapp-float">
+    <div class="wa-pulse"></div>
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="wa-tooltip" id="wa-tooltip">Chat Now</span>
+  </a>
+
+  <!-- ===== AI CHAT ===== -->
+  <div class="ai-chat-btn" id="ai-chat-btn">
+    <div class="ai-pulse"></div>
+    <span class="ai-icon">🤖</span>
+    <span class="ai-tooltip" id="ai-tooltip">AI Assistant</span>
+  </div>
+  <div class="ai-chat-modal" id="ai-chat-modal">
+    <div class="chat-header">
+      <div class="chat-avatar">🤖</div>
+      <div class="chat-info">
+        <h4 id="ai-title">AI Assistant — Dr. Rami</h4>
+        <span class="chat-status" id="ai-status">Online Now</span>
+      </div>
+      <button class="chat-close" id="chat-close">✕</button>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      <div class="chat-msg bot"><div class="msg-bubble" id="ai-welcome">Hello! I'm Dr. Rami Yousry's AI Assistant. How can I help you today? 👋</div></div>
+      <div class="chat-msg bot"><div class="msg-bubble coming-soon" id="ai-coming">🚧 This feature is under development. Coming soon with advanced AI!</div></div>
+      <div class="chat-msg bot">
+        <div class="quick-actions">
+          <button class="quick-btn" id="ai-register-btn" onclick="document.getElementById('ai-chat-modal').classList.remove('active');document.getElementById('contact').scrollIntoView({behavior:'smooth'})">📝 Register My Info</button>
+          <a href="https://wa.me/14489958107" target="_blank" class="quick-btn" id="ai-wa-btn">💬 Direct WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="chat-input" placeholder="Write your message here..." disabled/>
+      <button class="chat-send" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
