@@ -77,7 +77,8 @@ function updateSessionTimer() {
 // ===== THEME SELECTOR (Light/Dark/Auto) =====
 function initTheme() {
   const themeSelector = document.getElementById('theme-selector');
-  const savedTheme = localStorage.getItem('drr_theme') || 'auto';
+  // تعديل الإعداد الافتراضي ليكون الوضع الليلي (dark) للزوار الجدد
+  const savedTheme = localStorage.getItem('drr_theme') || 'dark';
   
   if (themeSelector) themeSelector.value = savedTheme;
 
@@ -104,7 +105,7 @@ function initTheme() {
   }
 
   window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {
-    if ((localStorage.getItem('drr_theme') || 'auto') === 'auto') {
+    if ((localStorage.getItem('drr_theme') || 'dark') === 'auto') {
       applyTheme('auto');
     }
   });
