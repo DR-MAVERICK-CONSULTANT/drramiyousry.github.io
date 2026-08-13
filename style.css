@@ -1425,3 +1425,54 @@ body.rtl-mode .conf-year-big { right: auto; left: 16px; }
   .conf-world { grid-template-columns: 1fr; }
   .awards-world { grid-template-columns: repeat(2,1fr); }
 }
+/* ===== THEME SELECTOR & COUNTRY ===== */
+.theme-select {
+  background: var(--bg-glass);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-family: var(--font-tech);
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  transition: var(--transition);
+  appearance: none;
+  -webkit-appearance: none;
+}
+.theme-select:hover, .theme-select:focus {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.theme-select option {
+  background: var(--bg-dark);
+  color: var(--text-primary);
+}
+.top-country {
+  color: var(--primary);
+  font-weight: 700;
+  margin-right: 4px;
+}
+body.rtl-mode .top-country { margin-right: 0; margin-left: 4px; }
+
+/* ================================================================
+   LIGHT MODE VARIABLES (Overrides default dark mode)
+   ================================================================ */
+body.light-mode {
+  --bg-main: #f8f9fa;
+  --bg-dark: #f0f2f5;
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+  --border-hover: #d1d5db;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+body.light-mode .hero { background: radial-gradient(ellipse at top, #e5e7eb 0%, #f0f2f5 60%); }
+body.light-mode .section:nth-child(even) { background: rgba(0,0,0,0.02); }
+body.light-mode .navbar.scrolled { background: rgba(255, 255, 255, 0.95); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); }
+body.light-mode .top-bar { background: rgba(248,249,250,0.97); }
