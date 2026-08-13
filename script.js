@@ -4,20 +4,18 @@
    Top Bar: Timezone + Session Timer
    ================================================================ */
 
-// ===== CONTACT FORM BACKEND CONFIG =====
 const SHEET_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzxiTacHvdP_gnT2udX7wSxzMy8o9-okjoicEZdhUPEaRSwlkgwu6RWicAKGZ6AFJlsFg/exec';
 
-// ===== STATE =====
 let currentLang = localStorage.getItem('drr_lang') || 'en';
 let sessionStart = Date.now();
 let sessionInterval = null;
 let clockInterval = null;
 
-// ===== DOM READY =====
 document.addEventListener('DOMContentLoaded', () => {
   initParticles();
   initNavbar();
   initLangSwitcher();
+  initTheme(); // تفعيل استدعاء وضع الألوان
   initTopBar();
   initCounterAnimations();
   initScrollAnimations();
@@ -27,14 +25,25 @@ document.addEventListener('DOMContentLoaded', () => {
   applyLanguage(currentLang);
 });
 
-// ===== TOP BAR =====
+// ===== TOP BAR & COUNTRY FETCH =====
 function initTopBar() {
-  // ─── Clock + Timezone ───
   updateClock();
   clockInterval = setInterval(updateClock, 1000);
-
-  // ─── Session Timer ───
   sessionInterval = setInterval(updateSessionTimer, 1000);
+  fetchCountry(); // استدعاء اسم البلد
+}
+
+async function fetchCountry() {
+  try {
+    const res = await fetch('https://ipapi.co/json/');
+    const data = await res.json();
+    const countryEl = document.getElementById('top-country');
+    if (countryEl && data.country_name) {
+      countryEl.textContent = data.country_name + ' | ';
+    }
+  } catch(e) { 
+    console.log('Country fetch failed'); 
+  }
 }
 
 function updateClock() {
@@ -65,7 +74,42 @@ function updateSessionTimer() {
   if (el) el.textContent = `${mins}:${secs}`;
 }
 
-// ===== PARTICLES =====
+// ===== THEME SELECTOR (Light/Dark/Auto) =====
+function initTheme() {
+  const themeSelector = document.getElementById('theme-selector');
+  const savedTheme = localStorage.getItem('drr_theme') || 'auto';
+  
+  if (themeSelector) themeSelector.value = savedTheme;
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      document.body.classList.add('light-mode');
+    } else if (theme === 'dark') {
+      document.body.classList.remove('light-mode');
+    } else { 
+      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      if (prefersLight) document.body.classList.add('light-mode');
+      else document.body.classList.remove('light-mode');
+    }
+  }
+
+  applyTheme(savedTheme);
+
+  if (themeSelector) {
+    themeSelector.addEventListener('change', (e) => {
+      const newTheme = e.target.value;
+      localStorage.setItem('drr_theme', newTheme);
+      applyTheme(newTheme);
+    });
+  }
+
+  window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {
+    if ((localStorage.getItem('drr_theme') || 'auto') === 'auto') {
+      applyTheme('auto');
+    }
+  });
+}
+
 function initParticles() {
   const container = document.getElementById('particles-container');
   if (!container) return;
@@ -81,7 +125,6 @@ function initParticles() {
   }
 }
 
-// ===== NAVBAR =====
 function initNavbar() {
   const navbar = document.getElementById('navbar');
   if (!navbar) return;
@@ -102,7 +145,6 @@ function initNavbar() {
   });
 }
 
-// ===== MOBILE NAV =====
 function initMobileNav() {
   const toggle = document.getElementById('nav-toggle');
   const links = document.getElementById('nav-links');
@@ -117,7 +159,6 @@ function initMobileNav() {
   });
 }
 
-// ===== LANGUAGE SWITCHER =====
 function initLangSwitcher() {
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -132,29 +173,24 @@ function initLangSwitcher() {
     });
   });
 
-  // Set active on load
   document.querySelectorAll('.lang-btn').forEach(b => {
     b.classList.toggle('active', b.getAttribute('data-lang') === currentLang);
   });
 }
 
-// ===== APPLY LANGUAGE =====
 function applyLanguage(lang) {
   if (typeof translations === 'undefined') return;
   const t = translations[lang];
   if (!t) return;
 
-  // Direction
   const isRTL = lang === 'ar';
   document.body.classList.toggle('rtl-mode', isRTL);
   document.body.classList.toggle('ltr-mode', !isRTL);
   document.documentElement.setAttribute('lang', lang);
   document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
 
-  // Store in sessionStorage for sub-pages
   sessionStorage.setItem('drr_lang', lang);
 
-  // Map of element IDs to translation keys
   const map = {
     'tb-your-time': 'top_your_time', 'tb-session': 'top_session', 'tb-available': 'available',
     'nav-about': 'nav_about', 'nav-expertise': 'nav_expertise', 'nav-experience': 'nav_experience',
@@ -203,17 +239,14 @@ function applyLanguage(lang) {
     if (el && t[key] !== undefined) el.textContent = t[key];
   });
 
-  // Placeholders
   setPlaceholder('fullname', t.form_ph_name);
   setPlaceholder('email', t.form_ph_email);
   setPlaceholder('phone', t.form_ph_phone);
   setPlaceholder('message', t.form_ph_msg);
   setPlaceholder('chat-input', t.chat_ph);
 
-  // Card explore buttons (all)
   document.querySelectorAll('.card-explore').forEach(el => { el.textContent = t.explore || 'Explore →'; });
 
-  // Update floating tags for about section
   const tags = document.querySelectorAll('.floating-tag span:last-child');
   const tagTexts = lang === 'ar'
     ? ['أمن سيبراني', 'ذكاء اصطناعي', 'مدرب دولي']
@@ -222,13 +255,11 @@ function applyLanguage(lang) {
     : ['Cybersecurity', 'AI Governance', 'Int\'l Trainer'];
   tags.forEach((tag, i) => { if (tagTexts[i]) tag.textContent = tagTexts[i]; });
 
-  // WhatsApp links
   const waMsg = encodeURIComponent(t.wa_msg || '');
   document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
     link.href = `https://wa.me/14489958107?text=${waMsg}`;
   });
 
-  // Page title
   const titles = { en: 'Dr. Ramy Yousry | International Consultant — AI & Cybersecurity', ar: 'د. رامي يسري | مستشار دولي — الذكاء الاصطناعي والأمن السيبراني', fr: 'Dr. Ramy Yousry | Consultant International — IA & Cybersécurité' };
   document.title = titles[lang] || titles.en;
 }
@@ -238,7 +269,6 @@ function setPlaceholder(id, text) {
   if (el && text) el.placeholder = text;
 }
 
-// ===== COUNTER ANIMATIONS =====
 function initCounterAnimations() {
   const counters = document.querySelectorAll('.stat-num');
   let animated = false;
@@ -267,7 +297,6 @@ function animateNumber(el, target, duration) {
   }, 16);
 }
 
-// ===== SCROLL ANIMATIONS =====
 function initScrollAnimations() {
   const els = document.querySelectorAll('.fade-in');
   const obs = new IntersectionObserver(entries => {
@@ -282,7 +311,6 @@ function initScrollAnimations() {
   els.forEach(el => obs.observe(el));
 }
 
-// ===== FORM =====
 function initForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
@@ -301,12 +329,11 @@ function initForm() {
     const msgEl = document.getElementById('form-success-msg');
     const t = (typeof translations !== 'undefined') ? translations[currentLang] : null;
     
-    // تم التصحيح هنا ليعتمد على الرابط الحقيقي بدلاً من النص الافتراضي
     const sheetConfigured = SHEET_WEBAPP_URL && SHEET_WEBAPP_URL.startsWith('https://script.google.com/');
     const formspreeConfigured = form.action && !form.action.includes('YOUR_FORMSPREE_ID');
 
     if (!sheetConfigured && !formspreeConfigured) {
-      showFormMsg('⚙️ Please configure the form backend first (see SETUP-GUIDE-AR.md).', true);
+      showFormMsg('⚙️ Please configure the form backend first.', true);
       if (btn) btn.disabled = false;
       if (btnText) btnText.style.display = 'inline';
       if (btnLoader) btnLoader.style.display = 'none';
@@ -358,11 +385,17 @@ function showFormMsg(msg, isError = false) {
   setTimeout(() => { el.style.display = 'none'; el.style.borderColor = ''; el.style.background = ''; el.style.color = ''; }, 7000);
 }
 
-// ===== AI CHAT =====
+// ===== AI CHAT (Gemini Integration) =====
+const GEMINI_API_KEY = 'AQ.Ab8RN6I422fSTA43062V5z9itcBULKSa8dfjpTcw0DRsvX0ujg';
+
 function initAIChat() {
   const btn = document.getElementById('ai-chat-btn');
   const modal = document.getElementById('ai-chat-modal');
   const closeBtn = document.getElementById('chat-close');
+  const chatInput = document.getElementById('chat-input');
+  const chatSendBtn = document.querySelector('.chat-send');
+  const chatMessages = document.querySelector('.chat-messages');
+
   if (!btn || !modal) return;
 
   btn.addEventListener('click', () => modal.classList.add('active'));
@@ -370,17 +403,93 @@ function initAIChat() {
   document.addEventListener('click', e => {
     if (!modal.contains(e.target) && !btn.contains(e.target)) modal.classList.remove('active');
   });
+
+  if (chatInput) chatInput.disabled = false;
+  if (chatSendBtn) chatSendBtn.disabled = false;
+
+  const comingSoonMsg = document.getElementById('ai-coming');
+  if (comingSoonMsg) comingSoonMsg.parentElement.style.display = 'none';
+
+  async function sendMessage() {
+    const text = chatInput.value.trim();
+    if (!text) return;
+
+    appendMessage(text, 'user');
+    chatInput.value = '';
+    const loadingId = appendMessage('...', 'bot', true);
+
+    try {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          system_instruction: {
+            parts: [{ text: "أنت مساعد ذكي للدكتور رامي يسري (مستشار دولي في حوكمة الذكاء الاصطناعي والأمن السيبراني). مهمتك الإجابة على استفسارات زوار الموقع باحترافية، وإرشادهم للتواصل عبر نموذج الاتصال أو الواتساب عند الحاجة. أجب باختصار وبلغة المستخدم." }]
+          },
+          contents: [{ parts: [{ text: text }] }]
+        })
+      });
+
+      const data = await response.json();
+      
+      if (data.error) {
+        console.error('API Error:', data.error);
+        updateMessage(loadingId, 'عذراً، حدث خطأ في النظام. يرجى المحاولة لاحقاً.');
+        return;
+      }
+
+      const botReply = data.candidates[0].content.parts[0].text;
+      updateMessage(loadingId, botReply);
+    } catch (error) {
+      console.error('Fetch Error:', error);
+      updateMessage(loadingId, 'عذراً، هناك مشكلة في الاتصال بالإنترنت.');
+    }
+  }
+
+  function appendMessage(text, sender, isLoading = false) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `chat-msg ${sender}`;
+    const id = 'msg-' + Date.now();
+    msgDiv.innerHTML = `<div class="msg-bubble ${isLoading ? 'loading' : ''}" id="${id}">${escapeHtml(text)}</div>`;
+    
+    const quickActions = chatMessages.querySelector('.quick-actions');
+    if (quickActions) {
+      chatMessages.insertBefore(msgDiv, quickActions.parentElement);
+    } else {
+      chatMessages.appendChild(msgDiv);
+    }
+    
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    return id;
+  }
+
+  function updateMessage(id, newText) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.innerHTML = escapeHtml(newText).replace(/\n/g, '<br>');
+      el.classList.remove('loading');
+    }
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  chatSendBtn?.addEventListener('click', sendMessage);
+  chatInput?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendMessage();
+  });
 }
 
-// ===== SUBPAGE UTILS (for sub-pages) =====
 function initSubPage() {
   const lang = sessionStorage.getItem('drr_lang') || localStorage.getItem('drr_lang') || 'en';
   currentLang = lang;
 
   initParticles();
   initTopBar();
+  initTheme(); // تفعيل وضع الألوان للصفحات الفرعية
 
-  // Set active lang button
   document.querySelectorAll('.lang-btn').forEach(b => {
     b.classList.toggle('active', b.getAttribute('data-lang') === lang);
     b.addEventListener('click', () => {
@@ -394,9 +503,7 @@ function initSubPage() {
     });
   });
 
-  // Scroll animations
   initScrollAnimations();
-
   applySubPageLanguage(lang);
   updateGoBackBtn();
 }
@@ -430,35 +537,29 @@ function applySubPageLanguage(lang) {
   document.documentElement.setAttribute('lang', lang);
   document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
 
-  // Top bar
   const tbYT = document.getElementById('tb-your-time'); if (tbYT) tbYT.textContent = t.top_your_time;
   const tbS = document.getElementById('tb-session'); if (tbS) tbS.textContent = t.top_session;
   const tbA = document.getElementById('tb-available'); if (tbA) tbA.textContent = t.available;
 
-  // Nav
   ['about','expertise','experience','certifications','conferences','portfolio','contact'].forEach(k => {
     const el = document.getElementById(`nav-${k}`);
     if (el && t[`nav_${k}`]) el.textContent = t[`nav_${k}`];
   });
 
-  // Back/Close buttons
   const backBtn = document.querySelector('.back-btn span');
   if (backBtn && t.go_back) backBtn.textContent = t.go_back;
   const closeBtnEl = document.querySelector('.close-btn span');
   if (closeBtnEl && t.close_page) closeBtnEl.textContent = t.close_page;
 
-  // AI chat
   setSubEl('ai-tooltip', t.ai_tooltip); setSubEl('ai-title', t.ai_title);
   setSubEl('ai-status', t.ai_status); setSubEl('ai-welcome', t.ai_welcome);
   setSubEl('ai-coming', t.ai_coming);
   setPlaceholder('chat-input', t.chat_ph);
   setSubEl('wa-tooltip', t.wa_tooltip);
 
-  // WhatsApp
   const waMsg = encodeURIComponent(t.wa_msg || '');
   document.querySelectorAll('a[href*="wa.me"]').forEach(l => { l.href = `https://wa.me/14489958107?text=${waMsg}`; });
 
-  // Call page-specific function
   if (typeof applyPageLang === 'function') applyPageLang(lang, t);
 }
 
