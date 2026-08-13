@@ -20,6 +20,7 @@
     <div class="top-bar-inner">
       <div class="top-bar-left">
         <span class="top-bar-icon">🌍</span>
+        <span id="top-country" class="top-country"></span>
         <span class="top-time-label" id="tb-your-time">Your Time</span>
         <span class="top-clock" id="top-clock">--:--:--</span>
         <span class="top-timezone" id="top-timezone"></span>
@@ -58,6 +59,11 @@
           <button class="lang-btn" data-lang="ar">AR</button>
           <button class="lang-btn" data-lang="fr">FR</button>
         </div>
+        <select id="theme-selector" class="theme-select">
+          <option value="auto">🌗 Auto</option>
+          <option value="dark">🌙 Dark</option>
+          <option value="light">☀️ Light</option>
+        </select>
         <button class="nav-toggle" id="nav-toggle">
           <span></span><span></span><span></span>
         </button>
@@ -384,7 +390,7 @@
       </div>
       <div class="footer-bottom">
         <p>© 2026 Dr. Ramy Yousry M. A. Hashem — <span id="footer-rights">All Rights Reserved</span></p>
-        <p class="footer-built" id="footer-built">Professional Integrated Website</p>
+        <p class="footer-built" id="footer-built">Doctor Consultant</p>
       </div>
     </div>
   </footer>
