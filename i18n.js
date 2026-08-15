@@ -52,7 +52,7 @@ const translations = {
     h_portfolio: "Portfolio & Resources",
 
     // About
-    about_lead: "PhD holder in Police Sciences, specializing in Cyber Legislation and Digital Transformation, with over twenty years of experience designing and implementing specialized training programs in AI and Cybersecurity.",
+    about_lead: "PhD holder in Digital Transformation, specializing in Cyber Legislation with over twenty years of experience designing and implementing specialized training programs in AI and Cybersecurity.",
     about_body: "Cambridge-certified international trainer with an outstanding record in building technical curricula and leading training and education teams.",
 
     // Expertise Cards
@@ -253,7 +253,7 @@ const translations = {
     h_awards: "التكريمات والجوائز",
     h_contact: "سجّل بياناتك وتواصل معي",
     h_portfolio: "البورتفوليو والموارد",
-    about_lead: "حاصل على درجة الدكتوراه في علوم الشرطة تخصص التشريعات السيبرانية والتحول الرقمي، بخبرة تزيد على عشرين عامًا في تصميم وتنفيذ البرامج التدريبية المتخصصة في الذكاء الاصطناعي والأمن السيبراني.",
+    about_lead: "حاصل على درجة الدكتوراه في التحول الرقمي وتخصص التشريعات السيبرانية ، بخبرة تزيد على عشرين عامًا في تصميم وتنفيذ البرامج التدريبية المتخصصة في الذكاء الاصطناعي والأمن السيبراني.",
     about_body: "مدرب دولي معتمد من كامبريدج البريطانية، لدي سجل حافل بالتميز في بناء المناهج التقنية وقيادة فرق التدريب والتعليم.",
     exp1_title: "التحول الرقمي وحوكمة الذكاء الاصطناعي",
     exp1_body: "تصميم استراتيجيات التحول الرقمي وأطر حوكمة الذكاء الاصطناعي للمؤسسات والحكومات.",
@@ -426,7 +426,7 @@ const translations = {
     h_awards: "Prix & Distinctions",
     h_contact: "Inscription & Contact",
     h_portfolio: "Portfolio & Ressources",
-    about_lead: "Titulaire d'un doctorat en Sciences de la Police, spécialisé en législation cybernétique et transformation numérique, avec plus de vingt ans d'expérience dans la conception et la mise en œuvre de programmes de formation spécialisés en IA et cybersécurité.",
+    about_lead: "Titulaire d'un doctorat en transformation numérique , spécialisé en législation cybernétique et , avec plus de vingt ans d'expérience dans la conception et la mise en œuvre de programmes de formation spécialisés en IA et cybersécurité.",
     about_body: "Formateur international certifié par Cambridge, avec un bilan remarquable dans la construction de curricula techniques et la direction d'équipes de formation.",
     exp1_title: "Transformation Numérique & Gouvernance IA",
     exp1_body: "Conception de stratégies de transformation numérique et de cadres de gouvernance IA pour les institutions et gouvernements.",
